@@ -2,6 +2,11 @@ import pandas as pd
 df = pd.read_csv('./Python/bodyPerformance_no_class.csv')
 print( df.shape )
 print( df.head() )
+print( '\n[ 결측치 ]' )
+print( df.isnull().sum() )   
+print( '\n중복 행 개수:' , df.duplicated().sum() )
+
+df = df.drop_duplicates()
 
 cat_cols = [ 'gender' ]
 for col in cat_cols :
@@ -99,6 +104,7 @@ for col in cat_cols :
 print( '\n[ 5. 신규 데이터 예측 ]' )
 print( '(1번고객)예측 체지방률(%):' , preds[0] )
 print( '(2번고객)예측 체지방률(%):' , preds[1] )
+
 
 
 
