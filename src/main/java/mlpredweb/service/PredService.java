@@ -1,4 +1,4 @@
-﻿package mlpredweb.service;
+package mlpredweb.service;
 
 import java.time.Duration;
 

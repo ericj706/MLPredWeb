@@ -20,42 +20,12 @@ repositories {
 }
 
 dependencies {
-    // 의존성( dependencies ) { } 안에 프로젝트내 추가할 라이브러리 코드 -> 자동으로 라이브러리 설치
-	// 1. springboot
-	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
-	// 2. MYSQL jdbc
-	runtimeOnly 'com.mysql:mysql-connector-j'
-	// 3. 롬복 
-	compileOnly 'org.projectlombok:lombok'
-  	annotationProcessor 'org.projectlombok:lombok'
-	// 4. JPA
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // Reactive HTTP server, WebClient and SSE
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.boot:spring-boot-starter-webclient'
 
-	// 5. Spring Reactive Web : HTTP 통신
-	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-	// 6. XML 파싱
-	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.22.2'
-	// 7. CSV 파싱
-	implementation 'com.opencsv:opencsv:5.12.0'
-
-	// 8. 단방향 암호화 (비크립트)
-	implementation 'org.springframework.security:spring-security-crypto'
-
-	// 9. JWT
-	implementation 'io.jsonwebtoken:jjwt-api:0.12.6'
-   	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.6'
-   	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.6'
-
-	// 10. Redis
-	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-
-	// 11. WebSocket
-	implementation 'org.springframework.boot:spring-boot-starter-websocket'
-	
-	// 12. 웹크롤링
-	implementation 'org.jsoup:jsoup:1.23.2'
-	implementation 'com.microsoft.playwright:playwright:1.63.0' 
-
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
