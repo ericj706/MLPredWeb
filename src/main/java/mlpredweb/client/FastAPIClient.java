@@ -58,7 +58,7 @@ public class FastAPIClient {
                 .build();
     }
 
-    // Python 전용 응답 규격. React용 ResponseDto와 분리한다.
+    // Python 응답 규격
     public record PythonResponse(
             String type,
             String message,
