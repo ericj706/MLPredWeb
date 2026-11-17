@@ -25,24 +25,11 @@ public class FastAPIClient {
     }
 
     public Flux<ServerSentEvent<ResponseDto>> predict(RequestDto requestDto) {
-        // React/Java의 camelCase 입력을 Python API의 필드 이름으로 변환
-        Map<String, Object> body = new LinkedHashMap<>();
-        body.put("age", requestDto.getAge());
-        body.put("gender", requestDto.getGender());
-        body.put("height_cm", requestDto.getHeightCm());
-        body.put("weight_kg", requestDto.getWeightKg());
-        body.put("diastolic", requestDto.getDiastolic());
-        body.put("systolic", requestDto.getSystolic());
-        body.put("grip_force", requestDto.getGripForce());
-        body.put("sit_and_bend", requestDto.getSitAndBendForward());
-        body.put("sit_ups", requestDto.getSitUpsCounts());
-        body.put("broad_jump", requestDto.getBroadJumpCm());
-
         return webClient.post()
                 .uri("/api/predict/stream")
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_NDJSON)
-                .bodyValue(body)
+                .bodyValue(requestDto)
                 .retrieve()
                 // Python은 줄마다 JSON 하나를 전송하므로 NDJSON으로 읽음
                 .bodyToFlux(PythonResponse.class)

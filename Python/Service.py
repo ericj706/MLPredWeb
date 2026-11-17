@@ -11,14 +11,14 @@ class BodyService :
         self.columns = {
             'age' : 'age' ,
             'gender' : 'gender' ,
-            'height_cm' : 'height_cm' ,
-            'weight_kg' : 'weight_kg' ,
+            'heightCm' : 'height_cm' ,
+            'weightKg' : 'weight_kg' ,
             'diastolic' : 'diastolic' ,                 
             'systolic' : 'systolic' ,                   
-            'grip_force' : 'gripForce' ,
-            'sit_and_bend' : 'sit and bend forward_cm' ,
-            'sit_ups' : 'sit-ups counts' ,
-            'broad_jump' : 'broad jump_cm'
+            'gripForce' : 'gripForce' ,
+            'sitAndBendForward' : 'sit and bend forward_cm' ,
+            'sitUpsCounts' : 'sit-ups counts' ,
+            'broadJumpCm' : 'broad jump_cm'
         }
 
     # 예측 함수 : 보낼 메시지를 리스트에 담아서 반환 (한 줄에 JSON 하나)
