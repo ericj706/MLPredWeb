@@ -96,7 +96,7 @@ new_bodyPerformance = pd.DataFrame( [
 for col in cat_cols :
     new_bodyPerformance[ col ] = new_bodyPerformance[ col ].astype( 'category' )
     preds = model.predict( new_bodyPerformance )
-    print( '\n[ 5. 신규 데이터 예측 ]' )
+print( '\n[ 5. 신규 데이터 예측 ]' )
 print( '(1번고객)예측 체지방률(%):' , preds[0] )
 print( '(2번고객)예측 체지방률(%):' , preds[1] )
 
